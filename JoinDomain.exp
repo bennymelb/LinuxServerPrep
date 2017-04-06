@@ -1,0 +1,30 @@
+#!/usr/bin/expect
+
+set timeout 10
+
+set domain [lindex $argv 0]
+
+set username [lindex $argv 1]
+
+set password [lindex $argv 2] 
+
+if {[llength $argv] == 0} {
+  send_user "Usage: JoinDomain.exp 'domain' 'username' 'password'\n"
+  exit 1
+} 
+
+spawn realm join --user=$username@$domain $domain
+
+expect {
+  timeout { send_user "\nFailed to get the password prompt\n"; exit 1}
+  eof { send_user "\nFailed to join to the domain $domain with username $username and password $password\n"}
+  "*assword" { send "$password\r"}
+}
+
+expect {
+  timeout { send_user "Didn't get a response within the timeout period after putting in the password"; exit 1}
+  "Couldn't join realm" { send_user "Failed to join to the domain"; exit 1}
+}
+
+send_user "Successfully joined to the domain"
+
