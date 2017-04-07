@@ -17,3 +17,9 @@ yum makecache fast
 
 # Install Docker CE
 yum -y install docker-ce
+
+# Make Docker auto startup
+systemctl enable docker.service
+
+# Start Docker
+systemctl start docker
