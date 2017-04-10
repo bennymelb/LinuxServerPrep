@@ -26,5 +26,5 @@ expect {
   "Couldn't join realm" { send_user "Failed to join to the domain"; exit 1}
 }
 
-send_user "Successfully joined to the domain"
+send_user "Successfully joined to the domain\n"
 
