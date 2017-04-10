@@ -23,7 +23,7 @@ expect {
 
 expect {
   timeout { send_user "Didn't get a response within the timeout period after putting in the password"; exit 1}
-  "Couldn't join realm" { send_user "Failed to join to the domain"; exit 1}
+  "Couldn't join realm" { send_user "Failed to join to the domain\n"; exit 1}
 }
 
 send_user "Successfully joined to the domain\n"
