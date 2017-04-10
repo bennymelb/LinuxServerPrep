@@ -61,3 +61,7 @@ realm permit -g $ServerAdmin@$Domain
 echo "" >> /etc/sudoers
 echo "# Allow member of the below AD group to run any commands anywhere" >> /etc/sudoers
 echo "%$ServerAdmin@$Domain	ALL=(ALL)	ALL" >> /etc/sudoers
+
+# Disable Root login on SSH
+sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
+systemctl restart sshd
