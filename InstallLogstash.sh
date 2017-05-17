@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script is to install ElasticSearch on CentOS
+# This script is to install Logstash on CentOS
 # https://www.elastic.co/guide/en/elasticsearch/reference/master/rpm.html
 
 # Install Java
