@@ -46,6 +46,8 @@ cd $foldercreated
 
 # make all the script executable
 chmod +x *.sh *.exp
+chmod +x role/*.sh
+chmod +x config/*.sh
 
 # run the script (and pass all the argument)
 ./initsetup.sh $PDC $Domain $Username $Password $ServerAdmin 
