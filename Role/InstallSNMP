@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# install SNMP & SNMP Utilities
+echo "Install SNMP & SNMP Utilities"
+yum -y install net-snmp net-snmp-utils
