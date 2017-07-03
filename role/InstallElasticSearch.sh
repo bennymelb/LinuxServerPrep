@@ -27,5 +27,3 @@ yum -y install elasticsearch
 # make elasticsearch start when system boot up
 systemctl enable elasticsearch.service
 
-# start elasticsearch
-systemctl start elasticsearch.service
