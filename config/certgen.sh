@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Generate a selfsign cert with the server FQDN
-
 fqdn=$(hostname -A)
 hostname=$(hostname)
 
