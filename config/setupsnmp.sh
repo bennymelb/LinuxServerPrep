@@ -21,7 +21,7 @@ then
 fi
 
 # Config SNMP
-snmpconfig=/etc/snmp/snmpd.config
+snmpconfig=/etc/snmp/snmpd.conf
 echo "" >> $snmpconfig
 echo "# Config a ReadOnly user" >> $snmpconf
 echo "com2sec ROUser  default $community" >> $snmpconfig
