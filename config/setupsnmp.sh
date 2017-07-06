@@ -24,7 +24,7 @@ fi
 snmpconfig=/etc/snmp/snmpd.config
 echo "" >> $snmpconfig
 echo "# Config a ReadOnly user" >> $snmpconf
-echo "$com2sec ROUser  default $community" >> $snmpconfig
+echo "com2sec ROUser  default $community" >> $snmpconfig
 echo "group MyROGroup v2c	ROUser" >> $snmpconfig
 echo "view all    included  .1	80" >> $snmpconfig
 echo 'access MyROGroup ""      any       noauth    0      all    none   none' >> $snmpconfig
