@@ -23,7 +23,7 @@ fi
 # Config SNMP
 snmpconfig=/etc/snmp/snmpd.config
 echo "" >> $snmpconfig
-echo "# Config a ReadOnly user" >> $snmpconfig
+echo "# Config a ReadOnly user" >> $snmpconf
 echo "$com2sec ROUser  default $community" >> $snmpconfig
 echo "group MyROGroup v2c	ROUser" >> $snmpconfig
 echo "view all    included  .1	80" >> $snmpconfig
