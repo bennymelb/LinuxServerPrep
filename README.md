@@ -12,4 +12,6 @@ To be able to run the script, you will need to pass the below argument into the 
 
 Usage: ./initsetup.sh {Name of the PDC} {Domain you wanted to join} {Username to join the domain} {Password} {Name of the server admin group}
 
-The InstallDockerCentOS.sh script will remove exiting docker installed on the host and install the latest docker-ce version from the offical repo.
+The script in the role folder will help you to install software packages
+
+The script in the config folder will help you to config software application
