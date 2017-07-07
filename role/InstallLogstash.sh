@@ -16,12 +16,12 @@ echo "name=Elasticsearch repository for 5.x packages" >> $repofile
 echo "baseurl=https://artifacts.elastic.co/packages/5.x/yum" >> $repofile
 echo "gpgcheck=1" >> $repofile
 echo "gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch" >> $repofile
-echo "enabled=1" >> $repofile
+echo "enabled=0" >> $repofile
 echo "autorefresh=1" >> $repofile
 echo "type=rpm-md" >> $repofile
 
 # Install logstash
-yum -y install logstash
+yum --enablerepo logstash-5.x -y install logstash
 
 # make logstash start when system boot up
 systemctl enable logstash.service
