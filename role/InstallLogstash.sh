@@ -22,6 +22,3 @@ echo "type=rpm-md" >> $repofile
 
 # Install logstash
 yum --enablerepo logstash-5.x -y install logstash
-
-# make logstash start when system boot up
-systemctl enable logstash.service

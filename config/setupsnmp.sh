@@ -31,5 +31,9 @@ echo 'access MyROGroup ""      any       noauth    0      all    none   none' >>
 echo "syslocation $location" >> $snmpconfig
 echo "syscontact $contact" >> $snmpconfig
 
+# make snmp start when system boot up
+systemctl enable snmpd.service
+
 # Start up SNMP
 sudo systemctl restart snmpd
+

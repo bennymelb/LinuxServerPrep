@@ -23,6 +23,3 @@ echo "type=rpm-md" >> $repofile
 # install elasticsearch using yum
 yum --enablerepo elasticsearch-5.x -y install elasticsearch
 
-# make elasticsearch start when system boot up
-systemctl enable elasticsearch.service
-
