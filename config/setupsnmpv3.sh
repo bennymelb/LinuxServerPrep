@@ -19,6 +19,9 @@ then
         quit
 fi
 
+# Stop SNMP service
+sudo systemctl stop snmpd
+
 snmpconfig=/etc/snmp/snmpd.conf
 # remove the default config file to prevent the default public community string
 mv $snmpconfig /etc/snmp/snmpd.conf_ORG
