@@ -20,9 +20,13 @@ then
         quit
 fi
 
-# Config SNMP
 snmpconfig=/etc/snmp/snmpd.conf
+# remove the default config file to prevent the default public community string
+mv $snmpconfig /etc/snmp/snmpd.conf_ORG
+
+# Config SNMP
 echo "" >> $snmpconfig
+echo "dontLogTCPWrappersConnects yes" >> $snmpconfig
 echo "# Config a ReadOnly user" >> $snmpconfig
 echo "com2sec ROUser  default $community" >> $snmpconfig
 echo "group MyROGroup v2c       ROUser" >> $snmpconfig
