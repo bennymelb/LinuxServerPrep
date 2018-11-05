@@ -25,10 +25,6 @@ then
 	quit
 fi
 
-
-# update the system
-yum -y update
-
 # install necessary packages
 yum -y install realmd samba samba-common oddjob oddjob-mkhomedir sssd ntpdate ntp expect
 
@@ -65,3 +61,7 @@ echo "%$ServerAdmin@$Domain	ALL=(ALL)	ALL" >> /etc/sudoers
 # Disable Root login on SSH
 sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
 systemctl restart sshd
+
+# update and reboot the system
+yum -y update
+reboot
