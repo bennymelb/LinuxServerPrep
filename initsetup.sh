@@ -48,7 +48,19 @@ systemctl start ntpd.service
 
 # Add the default domain suffix to sss config
 sed -i "/\[sssd\]/a default_domain_suffix = $Domain" /etc/sssd/sssd.conf
+
+# enable ddns
+sed -i "/\[domain\/$Domain\]/Ia dyndns_ttl = 3600" /etc/sssd/sssd.conf
+sed -i "/\[domain\/$Domain\]/Ia dyndns_update_ptr = False" /etc/sssd/sssd.conf
+sed -i "/\[domain\/$Domain\]/Ia dyndns_refresh_interval = 43200" /etc/sssd/sssd.conf
+sed -i "/\[domain\/$Domain\]/Ia dyndns_update = True" /etc/sssd/sssd.conf
+
+# Enable SSSD debug
+sed -i "/\[domain\/$Domain\]/Ia deug_level = 2" /etc/sssd/sssd.conf
+
 systemctl restart sssd
+
+
 
 # Allow member of linuxadmin group in AD to login to this server
 realm permit -g $ServerAdmin@$Domain
